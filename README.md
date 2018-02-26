@@ -6,4 +6,6 @@ The project is approximately 11k lines of code spread across ~150 C# files (Unit
 
 For the most interesting code, see files pertaining to [unit behavior](Assets/WorldObject/Behavior) and [unit state](Assets/WorldObject/StateScripts/UnitStates)
 
+NOTE: some of the formatting has not carried over well (indentations, etc.).
+
 
