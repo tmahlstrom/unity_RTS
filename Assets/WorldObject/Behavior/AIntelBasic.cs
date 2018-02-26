@@ -28,9 +28,7 @@ public class AIntelBasic : MonoBehaviour {
 
 
 	protected virtual void Start () {
-        StartCoroutine ("AIMain"); 
-		//StartCoroutine ("AttackNearestEnemyInSight");
-        //StartCoroutine ("SpawnWhenPossible");
+        StartCoroutine ("AIMain");
 	}
     
 
