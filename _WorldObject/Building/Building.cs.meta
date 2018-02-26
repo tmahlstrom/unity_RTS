@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8b09b9b3114254bfaad9f6adaf37f195
+timeCreated: 1488760466
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - buildImage: {fileID: 2800000, guid: 6c6286f73399c4f5e92afa062377dab8, type: 3}
+  - rallyPointImage: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

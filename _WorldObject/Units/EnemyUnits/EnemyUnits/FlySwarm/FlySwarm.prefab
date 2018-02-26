@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1845187176400654}
+  m_IsPrefabParent: 1
+--- !u!1 &1845187176400654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4425141579468148}
+  - component: {fileID: 114746542647498572}
+  - component: {fileID: 114042171476899326}
+  - component: {fileID: 114849497421812452}
+  m_Layer: 2
+  m_Name: FlySwarm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4425141579468148
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845187176400654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.98, y: 20, z: 64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114042171476899326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845187176400654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6375771f4af4c7fb8a84ff3a7e6275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 42
+  maxHitPoints: 42
+  manaPoints: 24
+  maxManaPoints: 24
+  isDead: 0
+  minAttackDamage: 1
+  maxAttackDamage: 3
+  attackCooldown: 2
+  attackAnimationDuration: 1
+  attackRange: 2
+  moveSpeed: 3
+  rotationSpeed: 3
+  attackEffectSelf: {fileID: 0}
+  attackEffectOther: {fileID: 0}
+  buildEffectSelf: {fileID: 0}
+  spawnEffectSelf: {fileID: 0}
+  spawnRayEffectSelf: {fileID: 0}
+  spawnAnimationDuration: 1
+  spawnPerCreate: 1
+  maxSpawnPopulation: 15
+  buildSpeed: 30
+  spawnCooldown: 1
+  spawnerSpecialDurationFactor: 0.05
+  spawnerSpecialEffectRate: 0.05
+  buildablesList: []
+  spawnablesList:
+  - {fileID: 1002418012296844, guid: 539b27f320a854b3791c8e0bd88ce33b, type: 2}
+  attackMoveVelocity: 2
+  tryingToAttackMoveVelocity: 5
+  patrolVelocity: 400
+  aggroRange: 5
+  patrolRadius: 2
+  degreeOfRandomMovement: 1
+  playerOwned: 0
+  productionCost: 0
+  rewardForKill: 0
+  attackAudioClip: {fileID: 0}
+  buildAudioClip: {fileID: 0}
+  dieAudioClip: {fileID: 0}
+  specialAudioClip: {fileID: 0}
+  spawnAudioClip: {fileID: 0}
+--- !u!114 &114746542647498572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845187176400654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72954b558adb542478db217180ae648c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114849497421812452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845187176400654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dcf7682f5c841cb953175271356565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  player: {fileID: 0}
+  enemyManager: {fileID: 0}
+  audioSource: {fileID: 0}
+  hasStatsVisible: 0
+  currentlySelected: 0
+  enemyUnitTargetsInRange: []
+  nearestEnemyUnitTargetInRange: {fileID: 0}
+  allyUnitTargetsInRange: []
+  enemySpawnTargetsInRange: []
+  enemyTargetsInRange: []
+  selfTargets: []
+  worldObject: {fileID: 0}
+  paramManager: {fileID: 0}
+  animationManager: {fileID: 0}
+  creator: {fileID: 0}
+  building: {fileID: 0}
+  spawner: {fileID: 0}
+  autoComplete: 1
+  buildingSpaceIsFree: 1
+  constructionHasBegun: 0
