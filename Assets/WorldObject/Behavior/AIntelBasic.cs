@@ -18,7 +18,7 @@ public class AIntelBasic : MonoBehaviour {
 
     protected WaitForSeconds shortWait = new WaitForSeconds(0.5f);
 
-	protected virtual void Awake(){
+    protected virtual void Awake(){
         worldObject = GetComponent<WorldObject> ();
         unit = GetComponent<Unit>(); 
         attacker = GetComponent<Attacker>();
