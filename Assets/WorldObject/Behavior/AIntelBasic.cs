@@ -10,7 +10,7 @@ public class AIntelBasic : MonoBehaviour {
     public bool attackAndSpawn;
     public bool attackOnly; 
 
-	protected WorldObject worldObject;
+    protected WorldObject worldObject;
     protected Unit unit; 
     protected Attacker attacker;
     protected Spawner spawner; 
