@@ -1,5 +1,6 @@
 # Unity non-script file types #
 ###############################
+*.anim
 *.meta
 *.prefab
 *.wav
