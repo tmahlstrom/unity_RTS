@@ -48,12 +48,12 @@ public class Reviver : MonoBehaviour {
 		performingRevive = true; 
 	}
 
-    public void ReviveExecution(){
+    	public void ReviveExecution(){
 		unit.ChangeMana(-33); 
-        FinishCorpseRevival(corpseBeingRevived); 
-        corpseBeingRevived = null; 
+        	FinishCorpseRevival(corpseBeingRevived); 
+        	corpseBeingRevived = null; 
 		performingRevive = false;
-    }
+    	}
 
 	public void ResetReviver(){
 		isTryingToCollectCorpse = false;
@@ -84,14 +84,14 @@ public class Reviver : MonoBehaviour {
 
 
 	private void FinishCorpseRevival (Corpse collectedCorpse){
-        WorldObject wo = collectedCorpse.GetComponent<WorldObject>();
-        if (wo){
-            wo.ReviveWO();
-        }
+        	WorldObject wo = collectedCorpse.GetComponent<WorldObject>();
+        	if (wo){
+            		wo.ReviveWO();
+        	}
 	}
 
 	//protected virtual void KeepUpWithAnyCorpseCollectionYouAreDoing(){
- //       if(actionManager.collecting) {
+ 	//if(actionManager.collecting) {
 	//		if(corpseBeingCollected != null && corpseBeingCollected.IsFinishedBeingCollected() == false) {
 	//			float incrementalContribution = corpseCollectionSpeed * Time.deltaTime;
 	//			corpseCollectionContributionFloat += incrementalContribution;
@@ -101,7 +101,7 @@ public class Reviver : MonoBehaviour {
 	//				corpseCollectionContributionFloat = 0.0f;
 	//				if (corpseBeingCollected.IsFinishedBeingCollected () == true) {
 	//					FinishCorpseCollection (corpseBeingCollected);
- //                       actionManager.RequestActionChangeApproval(Action.Collect, false);
+ 	//					//actionManager.RequestActionChangeApproval(Action.Collect, false);
 	//					corpseBeingCollected = null; 
 	//					//movement.ResetInteractions (); 
 	//				}
@@ -113,23 +113,23 @@ public class Reviver : MonoBehaviour {
 	//protected virtual void MonitorConditionsForStartingCorpseCollection(){
 	//	if (isTryingToCollectCorpse) {
 	//		if (movement.IsEngagedWithTarget(corpseBeingCollected.gameObject)) {
- //               if (actionManager.RequestActionChangeApproval(Action.Collect, true)) {
- //                   isTryingToCollectCorpse = false;
+ 	//               if (actionManager.RequestActionChangeApproval(Action.Collect, true)) {
+ 	//                   isTryingToCollectCorpse = false;
 
- //               }
+ 	//               }
 	//		}
 	//		else {
- //               actionManager.RequestActionChangeApproval(Action.Collect, false);
+ 	//               actionManager.RequestActionChangeApproval(Action.Collect, false);
 	//		}
 	//	}
 	//}
 
 
-    // private void MonitorConditionsForStartingCorpseCollection(){
-    //         if (corpseBeingRevived && actionManager.IsEngagedWithGO(corpseBeingRevived.gameObject)){
-    //             actionManager.RequestActionChangeApproval(State.Revive, true);
-    //             }
-    // }
+	// private void MonitorConditionsForStartingCorpseCollection(){
+	//         if (corpseBeingRevived && actionManager.IsEngagedWithGO(corpseBeingRevived.gameObject)){
+	//             actionManager.RequestActionChangeApproval(State.Revive, true);
+	//             }
+	// }
 
 
 
