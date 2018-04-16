@@ -41,22 +41,22 @@ public class Spawner : MonoBehaviour, ISpawner {
 
 
     public virtual void AddNewSpawnToPopulationCount(){
-		spawnPopulationCounter ++;
+	spawnPopulationCounter ++;
     }
 
     public virtual void SubtractDeadSpawnFromPopulationCount(){
-		if (spawnPopulationCounter > 0) {
-			spawnPopulationCounter--;
-		}
-	}   
+	if (spawnPopulationCounter > 0) {
+	    spawnPopulationCounter--;
+	}
+    }   
 
-	public virtual bool ReadyToSpawnerSpecial(){
+    public virtual bool ReadyToSpawnerSpecial(){
         return false; 
-	}
+    }
 
-	public virtual void InitiateSpawnerSpecial(){
+    public virtual void InitiateSpawnerSpecial(){
 
-	}
+    }
 
     public virtual void ConcludeSpawnerSpecial(){
 
@@ -72,28 +72,28 @@ public class Spawner : MonoBehaviour, ISpawner {
 
     protected ParamManager paramManager;
 
-	protected WorldObject worldObject;
-	protected Unit unit;
+    protected WorldObject worldObject;
+    protected Unit unit;
 
      
     protected int spawnPopulationCounter = 0;
-	protected float currentRechargeTime = 0.0f;
+    protected float currentRechargeTime = 0.0f;
     protected bool spawnProcessStarted; 
     protected bool specialProcessActive; 
 
-	protected Vector3 spawnGenerationPoint;
-	protected GameObject spawnHolder;
-	protected int releaseForce = 15;
-	protected Spawner spawner; 
+    protected Vector3 spawnGenerationPoint;
+    protected GameObject spawnHolder;
+    protected int releaseForce = 15;
+    protected Spawner spawner; 
 
     protected Vector3 domeCenter; 
 
 
-	protected virtual void Awake () {
+    protected virtual void Awake () {
         paramManager = GetComponent<ParamManager>(); 
-		worldObject = GetComponent<WorldObject> (); 
-		unit = GetComponent<Unit> ();
-		spawner = this;
+	worldObject = GetComponent<WorldObject> (); 
+	unit = GetComponent<Unit> ();
+	spawner = this;
         FlyDome dome = GetComponentInParent<FlyDome>(); 
         if (dome){
             domeCenter = dome.transform.position; 
@@ -101,42 +101,42 @@ public class Spawner : MonoBehaviour, ISpawner {
         if (worldObject){
             worldObject.OnWorldObjectDeathDelegate += NotifySpawnsOfDeath;
         }
-	}
+    }
 
-	protected virtual void Start () {
+    protected virtual void Start () {
         currentRechargeTime = paramManager.SpawnCooldown - Random.Range(1, 3);
-		CreateSpawnsTransform (); 
+	CreateSpawnsTransform (); 
 	}
 
     protected virtual void Update() {
         currentRechargeTime += Time.deltaTime;
     }
 
-	protected void OnEnable(){
-		spawnPopulationCounter = 0; 
-	}
+    protected void OnEnable(){
+	spawnPopulationCounter = 0; 
+    }
 
 
     protected virtual void CreateSpawn(){
 
     }
 
-	protected virtual void CreateSpawnsTransform (){
-		spawnHolder = new GameObject();
-		spawnHolder.name = worldObject.name + " Spawns";
-		if (worldObject.player) {
-			spawnHolder.transform.SetParent (worldObject.player.GetComponentInChildren<Spawns> ().gameObject.transform, true);
+    protected virtual void CreateSpawnsTransform (){
+	spawnHolder = new GameObject();
+	spawnHolder.name = worldObject.name + " Spawns";
+	if (worldObject.player) {
+	    spawnHolder.transform.SetParent (worldObject.player.GetComponentInChildren<Spawns> ().gameObject.transform, true);
             return; 
-		}
-		if (worldObject.enemyManager) {
-			spawnHolder.transform.SetParent (worldObject.enemyManager.GetComponentInChildren<Spawns> ().gameObject.transform, true);
-            return; 
-		}
 	}
+	if (worldObject.enemyManager) {
+	    spawnHolder.transform.SetParent (worldObject.enemyManager.GetComponentInChildren<Spawns> ().gameObject.transform, true);
+            return; 
+	}
+    }
 
-	protected virtual Vector3 DetermineSpawnPoint(){
-		return spawnGenerationPoint;
-	}
+    protected virtual Vector3 DetermineSpawnPoint(){
+        return spawnGenerationPoint;
+    }
 
     protected bool CooldownIsComplete() {
         if (currentRechargeTime >= paramManager.SpawnCooldown) return true;
@@ -149,9 +149,9 @@ public class Spawner : MonoBehaviour, ISpawner {
     }
 
 
-	protected virtual void AddReleaseForces (Spawn spawn){
+    protected virtual void AddReleaseForces (Spawn spawn){
 		
-	}
+    }
 
 
     protected virtual void ResetCurrentRechargeTime(){
