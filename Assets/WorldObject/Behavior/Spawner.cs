@@ -76,7 +76,6 @@ public class Spawner : MonoBehaviour, ISpawner {
 	protected Unit unit;
 
      
-
     protected int spawnPopulationCounter = 0;
 	protected float currentRechargeTime = 0.0f;
     protected bool spawnProcessStarted; 
