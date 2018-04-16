@@ -16,6 +16,6 @@ public class SitState : UnitBaseState {
 
 
 	public override void ExitRoutine(){
-        unit.animationManager.ChangeAnimation(EAnimation.Sit, false);
+        	unit.animationManager.ChangeAnimation(EAnimation.Sit, false);
 	}
 }
