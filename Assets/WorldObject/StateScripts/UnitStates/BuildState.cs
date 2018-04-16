@@ -15,7 +15,7 @@ public class BuildState : UnitBaseState {
 				unit.builder.InitializeConstruction();
 				PerformBuild();
 			} else {
-                SelfExitState(RTS.EAnimation.Build);
+                		SelfExitState(RTS.EAnimation.Build);
 			}
 		}
 	}
