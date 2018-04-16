@@ -16,7 +16,7 @@ public class SpecialState : UnitBaseState {
 	}
 
 	public override void SpaceBar(){
-        SelfExitState(RTS.EAnimation.SpawnerSpecial);
+        	SelfExitState(RTS.EAnimation.SpawnerSpecial);
 	}
 
 	private IEnumerator DelayedStartOfSpecial(){
@@ -29,7 +29,7 @@ public class SpecialState : UnitBaseState {
 	public override void ExitRoutine(){
 		unit.mover.EnableMoveInput();
 		unit.spawner.ConcludeSpawnerSpecial();
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.SpawnerSpecial, false);
+        	unit.animationManager.ChangeAnimation(RTS.EAnimation.SpawnerSpecial, false);
 	}
 
 	public override void SelfExitState(RTS.EAnimation state){
