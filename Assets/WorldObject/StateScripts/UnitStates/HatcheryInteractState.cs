@@ -18,15 +18,15 @@ public class HatcheryInteractState : UnitBaseState {
 	}
 
 	private void GetInPositionToInteract(){
-        if (unit.hatcheryInteracter.GOfocus){
+        	if (unit.hatcheryInteracter.GOfocus){
 			if (!IsEngagedWithGO(unit.hatcheryInteracter.GOfocus)){
 				unit.mover.PrimaryInteractGameObjectAtDistance(unit.hatcheryInteracter.GOfocus, 0.9f);
-                unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, false);
+                		unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, false);
 				// if (interactSound != null){
 				// 	unit.StopCoroutine(interactSound); 
 				// }
 				//interactSound = unit.StartCoroutine(InteractSound(false));
-                unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, true);
+                		unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, true);
 			} else{
 				PerformInteract();
 			}
@@ -34,8 +34,8 @@ public class HatcheryInteractState : UnitBaseState {
 	}
 
 	private void PerformInteract (){
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, true);
+		unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
+		unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, true);
 		unit.hatcheryInteracter.BeginInteract(); 
 		// if (interactSound != null){
 		// 	unit.StopCoroutine(interactSound); 
@@ -65,10 +65,10 @@ public class HatcheryInteractState : UnitBaseState {
 
 	public override void AnimationClimaxEvent(RTS.EAnimation state){
 		if (state == RTS.EAnimation.Attack){
-            unit.hatcheryInteracter.InteractExecution();
-            SelfExitState(RTS.EAnimation.Attack);
+			unit.hatcheryInteracter.InteractExecution();
+			SelfExitState(RTS.EAnimation.Attack);
 		}
-    }
+    	}
 
 	private IEnumerator InteractSound(bool toggle){
 		if (unit.worldObject.audioSource){
@@ -87,7 +87,7 @@ public class HatcheryInteractState : UnitBaseState {
 
 
 	public override void ExitRoutine(){
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, false);
+        	unit.animationManager.ChangeAnimation(RTS.EAnimation.Attack, false);
 		// if (interactSound != null){
 		// 	unit.StopCoroutine(interactSound); 
 		// }
@@ -98,8 +98,8 @@ public class HatcheryInteractState : UnitBaseState {
 	public override void SelfExitState(RTS.EAnimation state = 0){
 		if (state == RTS.EAnimation.Attack){
 			base.SelfExitState(state);
-            unit.mover.ClearMovement();
-            unit.SetUnitState(new IdleState(unit, false));
+			unit.mover.ClearMovement();
+			unit.SetUnitState(new IdleState(unit, false));
 		}
 	}
 
