@@ -42,10 +42,10 @@ public class FlySpawner : Spawner {
 
 
 	protected override Vector3 DetermineSpawnPoint (){
-        SpawnPoint spawnPointObject = GetComponentInChildren<SpawnPoint>();
-        if (spawnPointObject){
-            return spawnPointObject.transform.position;
-        }
+        	SpawnPoint spawnPointObject = GetComponentInChildren<SpawnPoint>();
+        	if (spawnPointObject){
+            		return spawnPointObject.transform.position;
+        	}
 		Vector3 almostSpawnGenerationPoint = this.transform.position;
 		almostSpawnGenerationPoint.y += 1.5f;
 		almostSpawnGenerationPoint += transform.forward * 0.5f;
@@ -56,7 +56,7 @@ public class FlySpawner : Spawner {
 	public override void InitiateSpawnerSpecial(){ 
 		base.InitiateSpawnerSpecial (); 
 		if (unit.paramManager.ManaPoints >= unit.paramManager.MaxManaPoints && this != null) {
-            StartCoroutine("Flurry");
+            		StartCoroutine("Flurry");
 		}
 	}
 
