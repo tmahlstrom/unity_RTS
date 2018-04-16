@@ -106,7 +106,7 @@ public class Spawner : MonoBehaviour, ISpawner {
     protected virtual void Start () {
         currentRechargeTime = paramManager.SpawnCooldown - Random.Range(1, 3);
 	CreateSpawnsTransform (); 
-	}
+    }
 
     protected virtual void Update() {
         currentRechargeTime += Time.deltaTime;
