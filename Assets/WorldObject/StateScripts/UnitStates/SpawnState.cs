@@ -13,7 +13,7 @@ public class SpawnState : UnitBaseState {
 			unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
 			unit.animationManager.ChangeAnimation(RTS.EAnimation.Spawn, true);
 		} else {
-            SelfExitState(RTS.EAnimation.Spawn);
+            		SelfExitState(RTS.EAnimation.Spawn);
 		}
 	}
 
@@ -25,28 +25,28 @@ public class SpawnState : UnitBaseState {
 		if (unit.spawner.IsSpawnProcessStarted()){
 			return true; 
 		}
-        return false; 
-    }
+        	return false; 
+    	}
 
 
 	public override void AnimationClimaxEvent(RTS.EAnimation state){
 		unit.spawner.SpawnClimaxEvent(); 
-    }
+    	}
 
-    public override void AnimationCompletionEvent(RTS.EAnimation state){
+    	public override void AnimationCompletionEvent(RTS.EAnimation state){
 		unit.spawner.ConcludeSpawnProcess();
-        SelfExitState(RTS.EAnimation.Spawn);
+        	SelfExitState(RTS.EAnimation.Spawn);
 	}
 
 	public override void ExitRoutine(){
 		unit.mover.EnableRotation();
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Spawn, false);
+        	unit.animationManager.ChangeAnimation(RTS.EAnimation.Spawn, false);
 	}
 
 	public override void SelfExitState(RTS.EAnimation state){
 		if (state == RTS.EAnimation.Spawn){
 			base.SelfExitState(state);
-            unit.SetUnitState(new IdleState(unit, false));
+			unit.SetUnitState(new IdleState(unit, false));
 		}
 	}
 
