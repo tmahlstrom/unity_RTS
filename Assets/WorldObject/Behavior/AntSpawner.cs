@@ -18,19 +18,19 @@ public class AntSpawner : Spawner {
         }
 
         protected override void Update () {
-        base.Update(); 
+        	base.Update(); 
         }
 
 
         protected override void CreateSpawn (){
-        base.CreateSpawn(); 
-        for (int i = 0; i < paramManager.SpawnPerCreate; i++) {
-            CreateAntSpawn(paramManager.SpawnablesList[0]);
+        	base.CreateSpawn(); 
+        	for (int i = 0; i < paramManager.SpawnPerCreate; i++) {
+            	        CreateAntSpawn(paramManager.SpawnablesList[0]);
                 }
         }
 
         public virtual void CreateAntSpawn (GameObject spawnGO){
-        GameObject newSpawnGameObject = Instantiate (spawnGO, DetermineSpawnPoint (), Quaternion.Euler (-90, 0, 0));
+        	GameObject newSpawnGameObject = Instantiate (spawnGO, DetermineSpawnPoint (), Quaternion.Euler (-90, 0, 0));
                 if (newSpawnGameObject != null) {
                         newSpawnGameObject.transform.SetParent (spawnHolder.transform);
                         newSpawnGameObject.SetActive (true);
@@ -49,7 +49,7 @@ public class AntSpawner : Spawner {
 
 	protected override Vector3 DetermineSpawnPoint (){
 		Vector3 almostSpawnGenerationPoint = this.transform.position;
-        almostSpawnGenerationPoint.y = transform.position.y; 
+        	almostSpawnGenerationPoint.y = transform.position.y; 
 		spawnGenerationPoint = almostSpawnGenerationPoint;
 		return spawnGenerationPoint; 
 	}
