@@ -41,14 +41,14 @@ public class Spawner : MonoBehaviour, ISpawner {
 
 
     public virtual void AddNewSpawnToPopulationCount(){
-	spawnPopulationCounter ++;
+		spawnPopulationCounter ++;
     }
 
     public virtual void SubtractDeadSpawnFromPopulationCount(){
-	if (spawnPopulationCounter > 0) {
-	    spawnPopulationCounter--;
-	}
-}   
+		if (spawnPopulationCounter > 0) {
+			spawnPopulationCounter--;
+		}
+	}   
 
 	public virtual bool ReadyToSpawnerSpecial(){
         return false; 
