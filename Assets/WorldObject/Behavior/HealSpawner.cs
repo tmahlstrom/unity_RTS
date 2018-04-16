@@ -18,8 +18,8 @@ public class HealSpawner: Spawner {
 	}
 
 	protected override void CreateSpawn () {
-        base.CreateSpawn();
-        for (int i = 0; i < paramManager.SpawnPerCreate; i++) {
+        	base.CreateSpawn();
+        	for (int i = 0; i < paramManager.SpawnPerCreate; i++) {
 			CreateHealSpawn (HealSpawnType.Level_1, null);
 			if (unit) {
 				unit.ChangeMana (6); 
@@ -54,10 +54,10 @@ public class HealSpawner: Spawner {
 
 
 	protected override Vector3 DetermineSpawnPoint (){
-        SpawnPoint spawnPointObject = GetComponentInChildren<SpawnPoint>();
-        if (spawnPointObject){
-            return spawnPointObject.transform.position;
-        }
+        	SpawnPoint spawnPointObject = GetComponentInChildren<SpawnPoint>();
+        	if (spawnPointObject){
+           		return spawnPointObject.transform.position;
+        	}
 		Vector3 almostSpawnGenerationPoint = this.transform.position;
 		almostSpawnGenerationPoint.y += 1.5f;
 		almostSpawnGenerationPoint += transform.forward * 0.5f;
@@ -74,7 +74,7 @@ public class HealSpawner: Spawner {
 	public override void InitiateSpawnerSpecial(){ 
 		base.InitiateSpawnerSpecial (); 
 		if (unit.paramManager.ManaPoints >= unit.paramManager.MaxManaPoints && this != null) {
-            StartCoroutine("HealAll");
+            		StartCoroutine("HealAll");
 		}
 	}
 
