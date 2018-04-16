@@ -26,12 +26,12 @@ public class Builder : MonoBehaviour, IBuilder {
     private void Awake () {
         worldObject = GetComponent<WorldObject>(); 
         unit = GetComponent<Unit>(); 
-		player = transform.root.GetComponent<Player> (); 
+	player = transform.root.GetComponent<Player> (); 
         paramManager = GetComponent<ParamManager>(); 
-	}
+    }
 	
-	private void Update () {
-		ControlGroupTriggeredBuildingPlacementCalcellation ();
+    private void Update () {
+	ControlGroupTriggeredBuildingPlacementCalcellation ();
     }
 
     private void OnEnable (){
@@ -206,21 +206,21 @@ public class Builder : MonoBehaviour, IBuilder {
 
 
 
-	//*************************************
+    //*************************************
     //BEING INPUT METHODS (no building objects created) 
-	//*************************************
+    //*************************************
 
 
 
-	private void RegisterBuildingTask (Building hitBuilding) { //again, this is called from the WO hierarchy right now.
+    private void RegisterBuildingTask (Building hitBuilding) { //again, this is called from the WO hierarchy right now.
         DestroyUnstartedPlacedBuilding();
         buildingBeingWorkedOn = null;
         buildingToResumeWorkOn = hitBuilding; //this control is straightforward now that i've added another building variable specifically for this
         goFocus = buildingToResumeWorkOn.gameObject; 
-	}
+    }
 
 
-	private void ActivateBuildingPlacementCursorRegime(){
+    private void ActivateBuildingPlacementCursorRegime(){
         player.cursorManagerScript.DisableCursor();
         player.dragSelectionHandlerScript.enabled = false;
         player.gridSystem.enabled = true;
