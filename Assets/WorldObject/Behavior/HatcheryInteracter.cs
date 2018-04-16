@@ -40,11 +40,11 @@ public class HatcheryInteracter : MonoBehaviour {
 		performingInteract = true; 
 	}
 
-    public void InteractExecution(){
+    	public void InteractExecution(){
  		hatcheryBeingTargeted.ToggleHatcheryActivity(false); 
-        hatcheryBeingTargeted = null; 
+        	hatcheryBeingTargeted = null; 
 		performingInteract = false;
-    }
+    	}
 
 	public void ResetHatcheryInteracter(){
 		hatcheryBeingTargeted = null; 
