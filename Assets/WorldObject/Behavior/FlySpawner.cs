@@ -6,8 +6,6 @@ public class FlySpawner : Spawner {
 
 	protected override void Awake () {
 		base.Awake ();
-
-
 	}
 
 	protected override void Start () {
@@ -18,15 +16,15 @@ public class FlySpawner : Spawner {
 		base.Update (); 
 	}
 
-    protected override void CreateSpawn (){
-        base.CreateSpawn();
+   	protected override void CreateSpawn (){
+        	base.CreateSpawn();
 		for (int i = 0; i < paramManager.SpawnPerCreate; i++) {
-            CreateFlySpawn(paramManager.SpawnablesList[0]);
+            		CreateFlySpawn(paramManager.SpawnablesList[0]);
 		}
 	}
 
-    protected virtual void CreateFlySpawn (GameObject flyGO){
-        GameObject newSpawnGameObject = (GameObject)Instantiate (flyGO, DetermineSpawnPoint (), Quaternion.Euler (-90, 0, 0));;
+    	protected virtual void CreateFlySpawn (GameObject flyGO){
+        	GameObject newSpawnGameObject = (GameObject)Instantiate (flyGO, DetermineSpawnPoint (), Quaternion.Euler (-90, 0, 0));;
 		if (newSpawnGameObject != null) {
 			newSpawnGameObject.transform.SetParent (spawnHolder.transform);
 			newSpawnGameObject.SetActive (true);
@@ -65,16 +63,16 @@ public class FlySpawner : Spawner {
 
 	public IEnumerator Flurry(){
 		int shotCost = 25;
-        CreateFlySpawn (paramManager.SpawnablesList[0]);	
+        	CreateFlySpawn (paramManager.SpawnablesList[0]);	
 		unit.ChangeMana (-shotCost);
 		yield return new WaitForSeconds (0.3f); 
-        CreateFlySpawn (paramManager.SpawnablesList[0]);
+        	CreateFlySpawn (paramManager.SpawnablesList[0]);
 		unit.ChangeMana (-shotCost);		
 		yield return new WaitForSeconds (0.3f); 
-        CreateFlySpawn (paramManager.SpawnablesList[0]);
+        	CreateFlySpawn (paramManager.SpawnablesList[0]);
 		unit.ChangeMana (-shotCost);
 		yield return new WaitForSeconds (0.3f); 
-        CreateFlySpawn (paramManager.SpawnablesList[0]);
+        	CreateFlySpawn (paramManager.SpawnablesList[0]);
 		unit.ChangeMana (-shotCost);
 	}
 }
