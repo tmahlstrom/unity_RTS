@@ -21,22 +21,22 @@ public class BuildState : UnitBaseState {
 	}
 
 	private void GetInPositionToBuild(){
-        if (unit.builder.GOfocus){
+        	if (unit.builder.GOfocus){
 			if (!IsEngagedWithGO(unit.builder.GOfocus)){
 				unit.mover.PrimaryInteractGameObjectAtDistance(unit.builder.GOfocus, 0.6f);
-                unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, false);
+                		unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, false);
 				if (unit.mover.IsInRangeOfPrimaryTarget(unit.builder.GOfocus) == false){
-                    unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, true);
+                    			unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, true);
 				} else{
-                    unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
+                    			unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
 				}
 			 }
 		}
 	}
 	
 	private void PerformBuild (){
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, true);
+		unit.animationManager.ChangeAnimation(RTS.EAnimation.Move, false);
+		unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, true);
 	}
 
 
@@ -52,13 +52,13 @@ public class BuildState : UnitBaseState {
 			return;
 		}
 		if (unit.builder.CheckToGiveResumeBuildOrder(hitObject)){
-				WorldObject wo = hitObject.gameObject.GetComponentInParent<WorldObject>();
-				if (wo){
-					wo.TargetedByPlayer(); 
-				}
+			WorldObject wo = hitObject.gameObject.GetComponentInParent<WorldObject>();
+			if (wo){
+				wo.TargetedByPlayer(); 
+			}
 			GetInPositionToBuild(); 
-            return;
-        }
+            		return;
+        	}
 		base.MouseClickRight(hitObject, hitPoint);
 	}
 
@@ -66,27 +66,27 @@ public class BuildState : UnitBaseState {
 		if (unit.builder.CheckToGiveNewBuildOrder()){
 			GetInPositionToBuild();
 			return;
-        }
+        	}
 	}
 
 
 
-    public override void AnimationClimaxEvent(RTS.EAnimation state){
+    	public override void AnimationClimaxEvent(RTS.EAnimation state){
 		if (state == RTS.EAnimation.Build){
-            unit.builder.BuildExecution();
+            		unit.builder.BuildExecution();
 		}
-    }
+    	}
 
 	public override void ExitRoutine(){
-        unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, false);
+        	unit.animationManager.ChangeAnimation(RTS.EAnimation.Build, false);
 		unit.builder.ResetBuilder();
 	}
 	
 	public override void SelfExitState(RTS.EAnimation state){
 		if (state == RTS.EAnimation.Build){
 			base.SelfExitState(state);
-            unit.mover.ClearMovement();
-            unit.SetUnitState(new IdleState(unit, false));
+            		unit.mover.ClearMovement();
+           		unit.SetUnitState(new IdleState(unit, false));
 		}
 	}
 
