@@ -58,8 +58,8 @@ public class HatcheryInteractState : UnitBaseState {
 				wo.TargetedByPlayer(); 
 			}
 			GetInPositionToInteract();
-            return;
-        }
+            		return;
+        	}
 		base.MouseClickRight(hitObject, hitPoint);
 	}
 
