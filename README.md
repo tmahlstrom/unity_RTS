@@ -5,8 +5,8 @@ For a video of the gameplay, see this [Reddit post](https://www.reddit.com/r/Uni
 The project is approximately 11k lines of code spread across ~150 C# files (Unity scripts).
 
 
-For the most interesting code, see files pertaining to [unit behavior](Assets/WorldObject/Behavior) and [unit state](Assets/WorldObject/StateScripts/UnitStates)
+For the most interesting code, see files pertaining to [unit behavior](Assets/WorldObject/Behavior) and [unit state](Assets/WorldObject/StateScripts/UnitStates).
 
-NOTE: some of the formatting has not carried over well from VS code (indentations, etc.). I have only cleaned this up for the above linked folders. 
+NOTE: some of the formatting has not carried over well from VS code. I have only cleaned this up for the above linked folders. 
 
 
