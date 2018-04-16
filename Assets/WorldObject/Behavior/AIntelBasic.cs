@@ -6,7 +6,7 @@ using RTS;
 
 public class AIntelBasic : MonoBehaviour {
 
-	[Header ("AI Parameters")]
+    [Header ("AI Parameters")]
     public bool attackAndSpawn;
     public bool attackOnly; 
 
