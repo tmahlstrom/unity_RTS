@@ -1,1 +1,1 @@
-These scripts manage all the major behavior of the gameobjects.
+These classes manage the major behavior of the gameobjects. All public methods are tied to an interface, and where necessary, they are also virtual and overridden in different children (e.g., the different spawners). These public methods are used extensively by the unit state classes. 
