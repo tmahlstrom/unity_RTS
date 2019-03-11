@@ -2,7 +2,7 @@ This repository contains the C# code I wrote for a real time strategy game run i
 
 For a video of the gameplay, see this [Reddit post](https://www.reddit.com/r/Unity3D/comments/7vplpp/rtstd_project_gameplay/).
 
-The project is approximately 11k lines of code spread across ~150 C# files (Unity scripts).
+The project is approximately 11k lines of code spread across ~150 C# files.
 
 
 For the most interesting code, see files pertaining to [unit behavior](Assets/WorldObject/Behavior) and [unit state](Assets/WorldObject/StateScripts/UnitStates).
